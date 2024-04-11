@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Resume Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Custom Resume Generator</h1>
+    <form>
+      <div class="form-group">
+        <label for="generic-resume">Generic Resume:</label>
+        <input type="file" id="generic-resume" accept=".doc,.docx,.pdf" />
+      </div>
+      <div class="form-group">
+        <label for="job-description">Job Description:</label>
+        <textarea id="job-description" rows="10"></textarea>
+      </div>
+      <button type="button" class="btn" id="generate-resume-button">Generate Custom Resume</button>
+    </form> 
+
+    <div id="custom-resume-preview" style="display: none;">
+      <button type="button" class="btn" id="final-resume-button">Generate Final Resume</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
