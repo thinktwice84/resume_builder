@@ -1,0 +1,110 @@
+Patrick Stevenson
+linkedin.com/in/patrick-stevenson
+Patrick.Stevenson89@gmail.com
+(720) 616-3461
+
+Summary of Qualifications
+Accomplished operations professional with extensive experience driving efficiency and scaling business processes in tech environments. Expert in leveraging data analytics and technical automation to inform decision-making and support sustained growth. Adept at orchestrating cross-departmental collaboration and leading transformative projects. 
+Technical Skills
+CRM (Salesforce, Hubspot)
+CS Support (Churnzero, Helpscout, Zendesk)
+Customer Engagement Technologies
+AI-driven Support Tools
+Workflow and Process Automation
+Retention Analysis
+Customer Journey Mapping
+Email Marketing Automation (Marketo)
+Technical Documentation
+Training and Development
+Project Management (Jira, Asana, Trello, Monday, Notion)
+Onboarding and Renewal Process Optimization
+
+
+Cloud Storage Solutions (AWS S3, Google Cloud Storage)
+Relationship Database Management (MySQL)
+Data Visualization (Tableau)
+Data Migration
+Data Monitoring and Maintenance
+Resource Allocation Optimization
+Integrations (Zapier, N8N, Workato)
+SaaS
+Agile
+Cross-functional Team Collaboration
+Account Data Management
+
+
+
+JavaScript Programming
+HTML/CSS
+React.js
+Front-end Development
+API Integrations and Development
+API Documentation
+Python (NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch)
+Data Analytics and Machine Learning
+Statistical Analysis and Predictive Modeling
+BI and Data Science Methodologies
+Google Analytics
+Confluence Management
+
+1
+
+Relevant Experience and Education
+LinearB    Customer Experience Operations Manager
+Austin, TX:			              May 2022 - Present
+
+Spearheaded a tech touch program resulting in a 20% increase in customer retention from Q2 2023 to Q4 2024, significantly impacting the bottom 50% of the customer base through enhanced onboarding and renewal processes.
+Designed and implemented automated solutions for customer metrics reporting, facilitating CSMs during QBRs, and developed a comprehensive tech touch onboarding system. This included training videos, surveys, help documents, and a shared team booking calendar, alongside ICB improvements based on feature utilization.
+Pioneered the use of machine learning for automated forecasting and health scores within Salesforce and Tableau, based on customer engagement metrics, effectively enhancing decision-making processes across the company.
+Successfully met individual and shared OKRs across Customer Success, Sales, and Marketing departments, focusing on feature adoption and tracking, demonstrating exceptional ability to drive cross-functional team success.
+Implemented AI GPT for customer support, trained on LinearB technical documentation, significantly improving the customer support experience by providing timely and accurate technical answers.
+Led critical integrations, including S3 and Google API, to develop comprehensive reports on customers' resource allocation, thereby offering valuable insights into optimizing resource use.
+Directed the seamless transition from Churnzero to Salesforce and Marketo for email drips and customer plays, covering areas such as onboarding, churn risks, renewals, feature utilization, and surveys, thereby enhancing customer engagement strategies.
+Assisted in the integration of Tableau and Salesforce, simplifying data access for AEs, CSMs, and leadership, and ensuring more informed decision-making throughout the organization.
+
+
+
+2
+
+Invicti Security - Strategic/Key Customer Success Manager
+Austin, TX:			              March 2021 - March 2022
+
+Invicti is the world’s leading dynamic web application security scanning tool that allows organizations direct insight into their online security posture. Both brands under Invicti (Acunetix and Netsparker) are used by many fortune 100 companies, along with government entities and militaries around the world. 
+
+90% client retention (50+ client book of business)
+100% upsell quota attainment in 2021
+Client relationship management through monthly and quarterly calls
+Proactive engagement and outreach within customer org to further product adoption
+Experience navigating complex legal and financial conversations for single and multi-year subscriptions
+Experience in training new hires and acting as technical liaison to internal Sales Org as needed
+
+
+Invicti Security - Sr. Account Executive
+Austin, TX:			              Jan 2019 - March 2021
+
+Invicti is the world’s leading dynamic web application security scanning tool that allows organizations direct insight into their online security posture. Both brands under Invicti (Acunetix and Netsparker) are used by many fortune 100 companies, along with government entities and militaries around the world. I was the first Account Executive hired by Acunetix in 2019 and grew to work for Invicti as a whole in the Senior role.
+
+Managed leads from discovery through close including demos and POCs
+Ramped up with Invicti from a Sales Team of 6 to over 30 people in just over a year
+Assisted in new hire training and development 
+Closed won average deal size over $15,000/year
+Increased average number of multi-year contracts from 30% to 76% from 2019 to 2020
+Facilitated direct sales and channel sales through partners
+
+ShipperHQ - Sales Engineer/Ops Manager
+Austin, TX:			              May 2017 - Jan 2019
+
+ShipperHQ is a front-end shipping solution providing eCommerce merchants with the means to calculate their negotiated shipping rates in real time. This product is used by SMB and Enterprise organizations. I operated in Sales and Onboarding as well as Partner Management.
+
+Operated as Sales and Onboarding Lead Engineer to qualify and convert leads
+Account manager for development agency partners and partner leads
+Provided product training and ecommerce consulting to both merchants and agency partners
+Monitored and maintained data for all clients in sales funnel
+Assisted in the development of the sales and onboarding teams and accompanying processes.
+
+B.S. Bioengineering - University of Colorado Denver
+Denver, CO:			              August 2014 - May 2017
+
+
+
+3

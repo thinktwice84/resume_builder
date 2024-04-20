@@ -65,3 +65,38 @@ body {
   ul {
     padding-left: 20px;
   }
+
+/* Add to styles.css */
+
+#json-content ul li {
+  white-space: pre-wrap; /* Allows text to wrap */
+  word-wrap: break-word; /* Ensures words can be broken at the end of the line */
+  overflow-wrap: break-word; /* Ensures proper handling of long unbreakable strings */
+}
+
+.json-list {
+  list-style-type: none; /* Remove default list styling */
+  padding-left: 0; /* Remove default padding */
+}
+
+.json-list li {
+  background-color: #f9f9f9; /* Light grey background */
+  border: 1px solid #ddd; /* Grey border */
+  margin-top: 5px; /* Add some space between list items */
+  padding: 10px; /* Add some padding inside list items */
+  border-radius: 4px; /* Rounded corners for list items */
+  word-wrap: break-word; /* Allow long words to break and wrap to the next line */
+  overflow-wrap: break-word; /* Ensure proper handling of long unbreakable strings */
+}
+
+.json-list li strong {
+  color: #333; /* Darker text for keys */
+}
+
+.json-list ul {
+  padding-left: 20px; /* Indent nested lists */
+}
+
+.json-list ul li {
+  background-color: #ffffff; /* White background for nested list items */
+}

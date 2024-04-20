@@ -7,9 +7,26 @@ import morgan from 'morgan';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import fetch from 'node-fetch';
+import { promisify } from 'util';
 
 const app = express();
 const port = 3000;
+
+// Promisify fs.readdir and fs.unlink for use with async/await
+const readdir = promisify(fs.readdir);
+const unlink = promisify(fs.unlink);
+
+// Function to clear files in a directory
+async function clearDirectory(directoryPath) {
+  try {
+    const files = await readdir(directoryPath);
+    const unlinkPromises = files.map(file => unlink(path.join(directoryPath, file)));
+    await Promise.all(unlinkPromises);
+    console.log(`Cleared all files in ${directoryPath}.`);
+  } catch (error) {
+    console.error(`Error clearing directory ${directoryPath}:`, error);
+  }
+}
 
 // Define storage for multer
 const storage = multer.diskStorage({
@@ -48,67 +65,72 @@ async function storeApiResponseLocallyAndSend(data) {
   try {
     await fs.promises.writeFile(filePath, fileData);
     console.log(`API response stored locally at ${filePath}`);
-    const webAppUrl = 'https://script.google.com/macros/s/AKfycbzu3LQ49SZRyILqjXMqOqDcEIommqIMoDB6W7yWdi1Amemu7UB7KJPiH6sQmfMgLPFTiw/exec';
-    console.log('Sending POST request to:', webAppUrl);
-
-    const response = await fetch(webAppUrl, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-    
-      if (response.ok) {
-        const responseText = await response.text(); // Get the response text
-        console.log('Response text:', responseText); // Log the response text
-    
-        const result = JSON.parse(responseText); // Parse the response text as JSON
-        console.log('Success:', result);
-      } else {
-        console.error('Error:', response.status, response.statusText);
-        const text = await response.text();
-        console.error('Response text:', text);
-      }
   } catch (error) {
-    console.error('Error storing API response or sending:', error);
+    console.error('Error storing API response:', error);
   }
 }
 
 // Convert the URL of the current module to a file path
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.post('/generate-resume', upload.fields([{ name: 'genericResume', maxCount: 1 }, { name: 'jobDescriptionFile', maxCount: 1 }]), async (req, res) => {
-  console.log('Received /generate-resume request.');
+app.post('/generate-resume', async (req, res) => {
+  // Clear files in the directories before handling new request
+  await clearDirectory('./uploads');
+  await clearDirectory('./apiResponses');
 
-  try {
-    const { jobDescription } = req.body;
-    const { files } = req;
-
-    console.log('Files:', files ? 'Received' : 'Not Received', 'Job Description:', jobDescription ? 'Received' : 'Not Received');
-
-    if (!files || !files.genericResume || files.genericResume.length === 0) {
-      console.error('No resume file uploaded with the request.');
-      return res.status(400).send('No resume file uploaded.');
+  upload.fields([{ name: 'genericResume', maxCount: 1 }, { name: 'jobDescription', maxCount: 1 }])(req, res, async (error) => {
+    if (error) {
+      console.error('Multer error:', error);
+      return res.status(500).send('Failed to upload files.');
     }
 
-    const jobDescriptionPath = `uploads/jobDescription-${Date.now()}.txt`;
-    await fs.promises.writeFile(jobDescriptionPath, jobDescription);
+    try {
+      const { jobDescription } = req.body;
+      const { files } = req;
 
-    const resumeContent = await readResumeFile(files.genericResume[0].path);
-    const customResumeData = await generateCustomResumeData(resumeContent, jobDescription);
-    res.json(customResumeData);
+      console.log('Files:', files ? 'Received' : 'Not Received', 'Job Description:', jobDescription ? 'Received' : 'Not Received');
 
-    storeApiResponseLocallyAndSend(customResumeData).catch(error => {
-      console.error('Error storing API response locally and sending:', error);
-    });
-  } catch (error) {
-    console.error('Error processing /generate-resume request:', error);
-    if (!res.headersSent) {
-      res.status(500).send('An error occurred processing your request.');
+      if (!files || !files.genericResume || files.genericResume.length === 0) {
+        console.error('No resume file uploaded with the request.');
+        return res.status(400).send('No resume file uploaded.');
+      }
+
+      const jobDescriptionPath = `uploads/jobDescription-${Date.now()}.txt`;
+      await fs.promises.writeFile(jobDescriptionPath, jobDescription);
+
+      const resumeContent = await readResumeFile(files.genericResume[0].path);
+      const rawData = await generateCustomResumeData(resumeContent, jobDescription);
+      const cleanData = cleanJsonString(rawData);
+
+      if (cleanData) {
+        res.json(JSON.parse(cleanData));  // Send cleaned JSON object to client
+      } else {
+        res.status(500).send('Failed to process JSON data');
+      }
+
+      storeApiResponseLocallyAndSend(JSON.parse(cleanData)).catch(error => {
+        console.error('Error storing API response locally and sending:', error);
+      });
+    } catch (error) {
+      console.error('Error processing /generate-resume request:', error);
+      if (!res.headersSent) {
+        res.status(500).send('An error occurred processing your request.');
+      }
     }
-  }
+  });
 });
+
+function cleanJsonString(inputString) {
+  try {
+    // Parse the input string as JSON
+    const jsonObj = JSON.parse(inputString);
+    // Stringify the JSON object to ensure proper formatting
+    return JSON.stringify(jsonObj, null, 2);
+  } catch (error) {
+    console.error('Failed to clean JSON string:', error);
+    return null;  // or handle the error as appropriate
+  }
+}
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));

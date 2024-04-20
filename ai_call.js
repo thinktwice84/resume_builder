@@ -48,8 +48,14 @@ You are to strictly adhere to the information provided in the generic resume. On
       }
     });
     console.log('API response:', response.data);
-    // Adjust based on the actual structure of the response
-    return response.data.choices[0].message.content;
+    
+    // Parse the response content as JSON
+    const customResumeData = JSON.parse(response.data.choices[0].message.content);
+    
+    // Format the JSON response with indentation and spacing
+    const formattedResumeData = JSON.stringify(customResumeData, null, 2);
+    
+    return formattedResumeData;
   } catch (error) {
     console.error('Error calling OpenAI:', error);
     throw error;
