@@ -3,3 +3,8 @@
 
 # Package lock file
 package-lock.json
+
+/uploads
+
+/apiResponses
+

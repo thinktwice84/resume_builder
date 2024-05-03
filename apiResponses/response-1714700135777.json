@@ -1,0 +1,55 @@
+{
+  "summary": "Accomplished leader in customer success management, leveraging extensive experience in operations and technical integration within SaaS environments to drive customer retention and success. Skilled in deploying data-driven strategies, fostering strong customer relationships, and leading high-performance teams in dynamic settings.",
+  "skills": [
+    "CRM (Salesforce, Hubspot)",
+    "CS Support (Churnzero, Helpscout, Zendesk)",
+    "Customer Engagement Technologies",
+    "AI-driven Support Tools",
+    "Workflow and Process Automation",
+    "Retention Analysis",
+    "Customer Journey Mapping",
+    "Email Marketing Automation (Marketo)",
+    "Technical Documentation",
+    "Project Management (Jira, Asana, Trello, Monday, Notion)",
+    "Onboarding and Renewal Process Optimization",
+    "Data Visualization (Tableau)",
+    "Data Analytics and Machine Learning",
+    "Agile",
+    "Cross-functional Team Collaboration",
+    "API Integrations and Development",
+    "SaaS",
+    "Leadership",
+    "Strategic Planning",
+    "Digital CS Strategies"
+  ],
+  "experience": [
+    {
+      "company": "LinearB",
+      "role": "Customer Experience Operations Manager",
+      "location": "Austin, TX",
+      "dateRange": "May 2022 - Present",
+      "description": "Spearheaded initiatives leading to significant improvements in customer retention and satisfaction through the introduction of technology-driven solutions. Led and mentored a team of customer success managers, instilling a culture of high performance and continuous development. Developed and executed a comprehensive customer success strategy, integrating machine learning and AI for automation and predictive analysis within customer engagement processes. Enhanced data-driven decision-making across customer success, sales, and marketing teams, consistently meeting strategic goals and performance targets."
+    },
+    {
+      "company": "Invicti Security",
+      "role": "Strategic/Key Customer Success Manager",
+      "location": "Austin, TX",
+      "dateRange": "March 2021 - March 2022",
+      "description": "Managed and maintained 90% client retention through proactive customer engagements and strategic account management. Mastered the art of implementing scaled customer success strategies supporting multiple product lines and customer objectives in talent acquisition. Acted as a key escalation point, resolving complex issues effectively to prevent churn and improve customer lifecycle engagement."
+    },
+    {
+      "company": "Invicti Security",
+      "role": "Sr. Account Executive",
+      "location": "Austin, TX",
+      "dateRange": "Jan 2019 - March 2021",
+      "description": "Excelled in driving sales growth and customer acquisition for SaaS-based security solutions, facilitating organization scale in a highly dynamic tech environment. Demonstrated strong leadership in team expansions and training, pivotal in developing customer-centric sales strategies."
+    },
+    {
+      "company": "ShipperHQ",
+      "role": "Sales Engineer/Ops Manager",
+      "location": "Austin, TX",
+      "dateRange": "May 2017 - Jan 2019",
+      "description": "Led sales and onboarding processes focusing on high conversion rates and strategic partner management, laying a solid foundation for robust customer support and engagement strategies."
+    }
+  ]
+}
